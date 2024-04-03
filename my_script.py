@@ -12,6 +12,7 @@ def main():
         else:
             result = factorial(num)
             print(f"The factorial of {num} is: {result}")
+            print("Ajays contribution")
     except ValueError:
         print("Please enter a valid integer.")
 
