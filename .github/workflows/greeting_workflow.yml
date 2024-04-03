@@ -1,0 +1,16 @@
+name: Greeting Workflow
+on:
+  repository_dispatch:
+    types: [new-contributor]
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Greet New Contributor
+        run: |
+          # Retrieve the event payload
+          username=$(jq -r '.client_payload.username' "$GITHUB_EVENT_PATH")
+          
+          # Display the greeting message
+          echo "Welcome, @$username, to our project! Thanks for your contribution."
